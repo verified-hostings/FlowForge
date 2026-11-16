@@ -30,7 +30,7 @@ return [
         'repo' => env('FLOWFORGE_UPDATE_REPO', 'DeveloperSarim/FlowForge'),
         // Ed25519 public key (base64) that must have signed a release's SHA256SUMS.txt for one-click updates.
         // Forks sign with their own key (scripts/make-signing-key.php) and set this alongside the repo.
-        'public_key' => env('FLOWFORGE_UPDATE_PUBLIC_KEY', 'D72pCONFcYy2vT8BA5iyWSzcVVH8N1KfXExKg44izSM='),
+        'public_key' => env('FLOWFORGE_UPDATE_PUBLIC_KEY', 'uiHk+bnvkx+HRPqfP9umfHi+Apud6ENYci5mWd/Y7B8='),
     ],
 
     // Step inputs/outputs larger than this (bytes of JSON) are truncated in execution logs.
