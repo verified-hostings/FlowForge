@@ -56,6 +56,16 @@
         @inertiaHead
     </head>
     <body class="bg-bg text-fg font-sans antialiased">
+        @if ($public)
+            {{-- Signed-out demo CTA; the signed-in notice lives in AppLayout. Dismissal persists in localStorage. --}}
+            <div id="vh-demo-banner" hidden class="relative border-b border-primary/20 bg-primary-soft px-4 py-2 pr-10 text-center text-12h text-fg">
+                This is a live demo &mdash; <a href="https://verifiedhostings.com/pricing" target="_blank" rel="noopener" class="font-semibold text-primary underline underline-offset-2">Get yours on Verified Hostings &rarr;</a>
+                <button type="button" aria-label="Dismiss" class="absolute right-2 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-md text-fg-muted transition-colors hover:bg-surface hover:text-fg" onclick="this.parentElement.hidden=true;try{localStorage.setItem('vh-demo-banner-dismissed','1')}catch(e){}">&times;</button>
+            </div>
+            <script>
+                (function(){var b=document.getElementById('vh-demo-banner');try{if(localStorage.getItem('vh-demo-banner-dismissed')==='1')return;}catch(e){}b.hidden=false;})();
+            </script>
+        @endif
         @inertia
     </body>
 </html>

@@ -29,9 +29,9 @@ export default function Login({ icons = {}, appCount = 0 }) {
                     {demo && (
                         <div className="mt-6 rounded-xl border border-primary/30 bg-primary-soft/50 p-4">
                             <p className="text-13h font-semibold">Try the live demo</p>
-                            <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-13">
-                                <dt className="text-fg-muted">Email</dt><dd className="font-mono">{demo.email}</dd>
-                                <dt className="text-fg-muted">Password</dt><dd className="font-mono">{demo.password}</dd>
+                            <dl className="mt-2 grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-13">
+                                <dt className="text-fg-muted">Email</dt><dd className="min-w-0 break-all font-mono">{demo.email}</dd>
+                                <dt className="text-fg-muted">Password</dt><dd className="min-w-0 break-all font-mono">{demo.password}</dd>
                             </dl>
                             <Button variant="primary" className="mt-3 w-full justify-center" loading={form.processing} onClick={demoLogin}>Sign in to the demo</Button>
                         </div>
