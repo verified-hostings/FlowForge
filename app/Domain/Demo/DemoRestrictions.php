@@ -47,7 +47,7 @@ class DemoRestrictions
         }
 
         return $allowed ? $next($request)
-            : $this->refuse($request, 'Not available in the live demo: deleting, credentials, running or switching on workflows and settings are turned off. Buy FlowForge to use everything.');
+            : $this->refuse($request, 'Not available in the live demo: deleting, credentials, running or switching on workflows and settings are turned off — install it on Verified Hostings in one click to use everything.');
     }
 
     private function refuse(Request $request, string $message): Response
