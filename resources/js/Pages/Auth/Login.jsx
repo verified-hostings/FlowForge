@@ -1,4 +1,4 @@
-import { Head, Link, useForm, usePage } from '@inertiajs/react';
+import { Head, Link, router, useForm, usePage } from '@inertiajs/react';
 import { CheckCircle2 } from 'lucide-react';
 import IntegrationIcon from '@/Components/IntegrationIcon';
 import { Button, Field, Input } from '@/Components/ui';
@@ -11,7 +11,7 @@ const LINKS = [['webhook', 'slack'], ['webhook', 'openai'], ['slack', 'hubspot']
 export default function Login({ icons = {}, appCount = 0 }) {
     const { flash, demo } = usePage().props;
     const form = useForm({ email: '', password: '', remember: true });
-    const demoLogin = () => form.transform(() => ({ email: demo.email, password: demo.password, remember: false })).post('/login');
+    const demoLogin = () => router.post('/login', { email: demo.email, password: demo.password, remember: false });
 
     const submit = (event) => {
         event.preventDefault();
