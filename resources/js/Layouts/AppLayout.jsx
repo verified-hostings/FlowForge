@@ -291,8 +291,8 @@ export default function AppLayout({ title, description, actions, children, wide 
             </div>
             <MobileTabBar can={can} isActive={isActive} onMore={() => setMobileOpen(true)} />
             {auth.user?.demo && (
-                <div className="border-b border-primary/20 bg-primary-soft px-4 py-2 text-center text-12h text-fg">
-                    <strong>Live demo.</strong> Build and explore freely; it resets every hour. Deleting, credentials, running workflows and settings are turned off. <a href="https://verifiedhostings.com/signup?utm_source=demo&utm_medium=app" target="_blank" rel="noopener" className="font-semibold text-primary underline underline-offset-2">Build yours on Verified Hostings →</a>
+                <div className="border-b border-black/20 px-4 py-2 text-center text-12h text-[#eef4ee]" style={{ background: 'linear-gradient(90deg,#0e2417 0%,#14532d 55%,#1a6b3c 100%)' }}>
+                    <strong>Live demo.</strong> Build and explore freely; it resets every hour. Deleting, credentials, running workflows and settings are turned off. <a href="https://verifiedhostings.com/signup?utm_source=demo&utm_medium=app" target="_blank" rel="noopener" className="font-semibold text-white underline underline-offset-2">Build yours on Verified Hostings →</a>
                 </div>
             )}
             <main className={cn('mx-auto px-4 pt-6 pb-[calc(6rem+env(safe-area-inset-bottom))] sm:px-8 lg:py-8', wide ? 'max-w-[1400px]' : 'max-w-6xl', title === null && wide && 'max-w-none')}>

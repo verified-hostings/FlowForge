@@ -57,10 +57,10 @@
     </head>
     <body class="bg-bg text-fg font-sans antialiased">
         @if ($public)
-            {{-- Signed-out demo CTA; the signed-in notice lives in AppLayout. Dismissal persists in localStorage. --}}
-            <div id="vh-demo-banner" hidden class="relative border-b border-primary/20 bg-primary-soft px-4 py-2 pr-10 text-center text-12h text-fg">
-                This is a live demo &mdash; <a href="https://verifiedhostings.com/pricing" target="_blank" rel="noopener" class="font-semibold text-primary underline underline-offset-2">Get yours on Verified Hostings &rarr;</a>
-                <button type="button" aria-label="Dismiss" class="absolute right-2 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-md text-fg-muted transition-colors hover:bg-surface hover:text-fg" onclick="this.parentElement.hidden=true;try{localStorage.setItem('vh-demo-banner-dismissed','1')}catch(e){}">&times;</button>
+            {{-- Signed-out demo CTA; the signed-in notice lives in AppLayout. Dismissal persists in localStorage. Evergreen Verified Hostings bar matching the other hosted demos. --}}
+            <div id="vh-demo-banner" hidden style="position:relative;border-bottom:1px solid rgba(0,0,0,.18);background:linear-gradient(90deg,#0e2417 0%,#14532d 55%,#1a6b3c 100%);padding:7px 46px 7px 16px;text-align:center;font-size:12.5px;line-height:1.45;color:#eef4ee;">
+                This is a live demo &mdash; <a href="https://verifiedhostings.com/pricing" target="_blank" rel="noopener" style="color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:2px;">Get yours on Verified Hostings &rarr;</a>
+                <button type="button" aria-label="Dismiss" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:transparent;color:#9db8a6;font-size:20px;line-height:1;cursor:pointer;" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,.14)'" onmouseout="this.style.color='#9db8a6';this.style.background='transparent'" onclick="this.parentElement.hidden=true;try{localStorage.setItem('vh-demo-banner-dismissed','1')}catch(e){}">&times;</button>
             </div>
             <script>
                 (function(){var b=document.getElementById('vh-demo-banner');try{if(localStorage.getItem('vh-demo-banner-dismissed')==='1')return;}catch(e){}b.hidden=false;})();
